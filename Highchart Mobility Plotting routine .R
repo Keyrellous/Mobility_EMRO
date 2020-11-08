@@ -14,7 +14,7 @@ names(Mobility)[names(Mobility) == "country_region"] <- "Country0"
 Mobility$Date<-as.Date(Mobility$Date)
 
 
-country_00<-"Egypt"
+country_00<-"Egypt" # Type the selected Country Here 
 MobCas<-full_join(WHOCases, Mobility,by=c("Country0","Date" ))
 Mob_country<-filter(MobCas, Country0==country_00 & sub_region_1=="" & metro_area=="")
 MobilityPlot<-hchart(Mob_country, "column", name="Daily Cases", hcaes(x=Date, y=New_cases), yAxis=0, color="grey")%>%
